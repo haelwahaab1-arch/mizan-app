@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مِيزَان | منظومة يَحْيَى للعدالة</title>
+    <meta name="theme-color" content="#059669" />
+    <meta name="description" content="الأداة القانونية الأولى للمحامي المصري لحساب الرسوم والمواريث." />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-emerald-200">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const App = () => {
+            const [activeTab, setActiveTab] = useState('fees');
+            const [claimValue, setClaimValue] = useState('');
+            
+            // معادلة حساب الرسوم (نموذج مبدئي قابل للتطوير)
+            const calculateFees = (value) => {
+                const num = parseFloat(value);
+                if (!num || num <= 0) return 0;
+                // حساب تقديري للرسوم النسبية والصندوق (مثال: 7.5%)
+                return (num * 0.075).toFixed(2);
+            };
+
+            return (
+                <div className="min-h-screen pb-12">
+                    {/* رأس التطبيق */}
+                    <header className="bg-emerald-700 text-white p-6 shadow-md">
+                        <div className="max-w-3xl mx-auto flex items-center gap-4">
+                            <div className="text-4xl bg-white/20 p-2 rounded-xl border border-white/30 shadow-inner">⚖️</div>
+                            <div>
+                                <h1 className="text-3xl font-bold tracking-tight">تطبيق مِيزَان</h1>
+                                <p className="text-emerald-200 text-sm mt-1 font-semibold">الأداة القانونية السيادية | منظومة يَحْيَى</p>
+                            </div>
+                        </div>
+                    </header>
+
+                    <main className="max-w-3xl mx-auto mt-8 px-4">
+                        {/* مساحة عرض إعلانات جوجل AdSense */}
+                        <div className="w-full h-24 bg-white border border-dashed border-slate-300 rounded-xl mb-8 flex items-center justify-center text-slate-400 text-sm font-bold shadow-sm">
+                            [ مساحة إعلانية - Google AdSense ]
+                        </div>
+
+                        {/* أزرار التنقل */}
+                        <div className="flex bg-white rounded-xl shadow-sm overflow-hidden mb-6 border border-slate-200 p-1">
+                            <button 
+                                onClick={() => setActiveTab('fees')}
+                                className={`flex-1 py-3 font-bold rounded-lg transition-all ${activeTab === 'fees' ? 'bg-emerald-100 text-emerald-800 shadow-sm' : 'text-slate-500 hover:bg-slate-50'}`}
+                            >
+                                💰 الرسوم القضائية
+                            </button>
+                            <button 
+                                onClick={() => setActiveTab('inheritance')}
+                                className={`flex-1 py-3 font-bold rounded-lg transition-all ${activeTab === 'inheritance' ? 'bg-emerald-100 text-emerald-800 shadow-sm' : 'text-slate-500 hover:bg-slate-50'}`}
+                            >
+                                👨‍👩‍👧‍👦 المواريث الشرعية
+                            </button>
+                        </div>
+
+                        {/* محتوى التطبيق */}
+                        <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 min-h-[400px]">
+                            {activeTab === 'fees' ? (
+                                <div className="space-y-6">
+                                    <h2 className="text-xl font-bold text-slate-800 border-b border-slate-100 pb-3">حساب الرسوم النسبية وصندوق المحاكم</h2>
+                                    <div>
+                                        <label className="block text-sm font-bold text-slate-600 mb-3">قيمة المطالبة (بالجنيه المصري):</label>
+                                        <input 
+                                            type="number" 
+                                            value={claimValue}
+                                            onChange={(e) => setClaimValue(e.target.value)}
+                                            className="w-full p-4 text-xl border-2 border-slate-200 rounded-xl focus:ring-0 focus:border-emerald-500 outline-none transition-all"
+                                            placeholder="أدخل قيمة الدعوى هنا..."
+                                        />
+                                    </div>
+                                    
+                                    <div className="bg-gradient-to-l from-emerald-50 to-emerald-100/50 rounded-2xl p-6 border border-emerald-100 mt-6">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="text-slate-700 font-bold text-lg">الرسم التقريبي المطلوب:</span>
+                                            <span className="text-4xl font-black text-emerald-700">{calculateFees(claimValue)} <span className="text-lg text-emerald-600">ج.م</span></span>
+                                        </div>
+                                        <p className="text-xs text-emerald-600/80 mt-4 font-semibold border-t border-emerald-200/50 pt-3">
+                                            * هذه الحسابات استرشادية مبنية على القواعد العامة وتسهل عمل المحامي، وقد تختلف قليلاً وفقاً لتقدير قلم المطالبات.
+                                        </p>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div className="space-y-6 flex flex-col items-center justify-center text-center h-full pt-10">
+                                    <div className="text-6xl mb-4 bg-slate-50 p-6 rounded-full border border-slate-100">📖</div>
+                                    <h2 className="text-2xl font-bold text-slate-800 mb-3">محرك المواريث الشرعية (جبريل)</h2>
+                                    <p className="text-slate-500 max-w-md leading-relaxed">
+                                        جاري ربط خوارزمية تقسيم التركات المعقدة (المناسخات والوصية الواجبة) بالواجهة الرسومية. ستكون متاحة في التحديث السيادي القادم.
+                                    </p>
+                                    <button className="mt-6 px-8 py-3 bg-slate-900 text-white rounded-full font-bold shadow-lg hover:bg-slate-800 transition-colors">
+                                        يتم التحديث تلقائياً للمحامين
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </main>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "mizan-app",
+  "version": "1.0.0",
+  "description": "منظومة يَحْيَى | حوكمة الذكاء الاصطناعي والسيادة الرقمية",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'No linter configured for static HTML'"
+  },
+  "keywords": [
+    "ai-governance",
+    "digital-sovereignty",
+    "legal-tech"
+  ],
+  "author": "Hisham Abdel Wahab",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.3.1"
+  }
+}

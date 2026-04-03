@@ -1,0 +1,25 @@
+{
+  "name": "mizan-app",
+  "version": "1.0.0",
+  "description": "منظومة يَحْيَى - Sovereign AI & Predictive Intelligence for Industrial Energy Optimization",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "dev": "npx http-server -p 8080",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haelwahaab1-arch/mizan-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haelwahaab1-arch/mizan-app/issues"
+  },
+  "homepage": "https://github.com/haelwahaab1-arch/mizan-app#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}

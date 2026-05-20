@@ -1,0 +1,22 @@
+{
+  "name": "mizan-app",
+  "version": "1.0.0",
+  "description": "YAHYA System - Sovereign AI & Predictive Intelligence for Industrial Energy Optimization",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000",
+    "build": "echo 'Static site - no build required'",
+    "test": "echo 'No tests configured'"
+  },
+  "keywords": [
+    "ai",
+    "energy-optimization",
+    "yahya-system"
+  ],
+  "author": "Hesham Alaa El-Din Abdel Wahab",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@vercel/speed-insights": "^1.1.0"
+  }
+}
